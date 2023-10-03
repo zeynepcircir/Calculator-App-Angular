@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="result">
+        <span class="result-text">{{ result }}</span>
+        <span class="value"></span>
+    </div>
+    <div class="buttons" *ngFor="let buttonRow of buttons">
+        <button class="button" *ngFor="let button of buttonRow">{{ button }}</button>
+    </div>
+</div>
