@@ -1,9 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body{
+    color: var(--font-color);
+    height: 100%;
+    width: 100%;
+    background: #d6d6d6;
+    font-family: 'Poppins', sans-serif;
+}
+
 button{
     all:unset;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --primary-color: #b4dced;
+    --secondary-color: #cde6f5;
+    --font-color: rgb(64, 64, 64);
+    --bg-color: #ffffff;
+    --toggle-bg: #A9DCFD;
+}
+
+[data-theme="dark"] {
+    --primary-color: #002235;
+    --secondary-color: rgba(5, 5, 5, 0.4);
+    --font-color: #ffffff;;
+    --bg-color: #000000;
+    --toggle-bg: #1B6A9C;
 }

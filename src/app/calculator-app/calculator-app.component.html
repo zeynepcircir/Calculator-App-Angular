@@ -2,8 +2,28 @@
 
 <div class="container">
 
-    <div class="image-button">
-        <img src="../../assets/history.png" alt="" class="history-image">
+    <div class="settings-container">
+        <div class="toggle-container">
+            <input class="checkbox" type="checkbox" id="toggle" (change)="this.toggleClicked()" />
+            <label class="toggle" for="toggle">
+                <i class="bi bi-sun toggle-image"></i>
+                <i class="bi bi-moon toggle-image"></i>
+                <span id="ball" (click)="this.toggleClicked()"></span>
+            </label>
+        </div>
+    
+        <button class="history-image" mat-icon-button aria-label="iconButton">
+            <mat-icon>history</mat-icon>
+        </button>
+    </div>
+    
+
+    <div  class="equal-button" >
+        <div class="equal-image">
+        <button mat-icon-button aria-label="iconButton">
+            <mat-icon> drag_handle </mat-icon>
+        </button>
+    </div>
     </div>
 
     <div class="result">

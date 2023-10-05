@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  background: #ffffff;
+  background: var(--bg-color);
   flex-direction: column;
   position: absolute;
   width: 290px;
@@ -9,8 +9,8 @@
 }
 
 .result {
-  background: #ffffff;
-  height: 220px;
+  background: var(--bg-color);
+  height: 200px;
   font-size: 30px;
   display: flex;
   align-items: flex-end;
@@ -31,7 +31,7 @@
 }
 
 .buttons {
-  background: #b4dced;
+  background: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@
   height: 100%;
   width: 50px;
   border-radius: 25px;
-  background-color: #cde6f5;
+  background-color: var(--secondary-color);
   gap: 14px;
 }
 
@@ -85,12 +85,11 @@
 }
 
 .row-button {
-  background: #cde6f5;
+  background: var(--secondary-color);
   border-radius: 25px;
 }
 
 .button {
-  color: rgb(64, 64, 64);
   height: 50px;
   width: 50px;
   font-weight: 600;
@@ -99,44 +98,85 @@
   justify-content: center;
   border-radius: 100%;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .regular-button {
-  background: #cde6f5;
+  background: var(--secondary-color);
 }
 
 .button:hover {
   background: #e5e5e5;
 }
 
-.other-button {
-  background: #cde6f5;
-}
-
-.other-button:hover {
-  background: #ffffff;
-}
-
-.equal-button {
-  background: #cde6f5;
-}
-
-.equal-button:hover {
-  background: #fcfcfc;
-}
-
 .history-image {
   position: absolute;
   width: 20px;
   height: 20px;
+  cursor: pointer;
+  right: 21px;
+  z-index: 100;
 }
 
-.image-button {
+.settings-container {
   position: relative;
   display: flex;
   width: 100%;
-  height: 20px;
+  height: 40px;
+  align-items: center;
   justify-content: flex-end;
-  padding-right: 21px;
-  margin-top: 21px;
+  margin-top: 35px;
+}
+
+.toggle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 0 16px;
+  background-color: var(--toggle-bg);
+}
+
+.toggle-image {
+  font-size: 20px;
+  z-index: 100;
+}
+
+#ball {
+  position: absolute;
+  width: 55%;
+  height: 100%;
+  border-radius: 20px;
+  transition: 0.2s;
+  background-color: var(--secondary-color);
+}
+
+.equal-image {
+  position: absolute;
+}
+
+.equal-button {
+  width: 100%;
+  position: absolute;
+  bottom: 385px;
+  left: 25px;
 }

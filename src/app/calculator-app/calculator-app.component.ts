@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-calculator-app',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator-app.component.css']
 })
 export class CalculatorAppComponent implements OnInit {
-
 
   result: string = "0";
   value: { active: boolean, value: string } = { active: true, value: "0" };
@@ -18,9 +17,12 @@ export class CalculatorAppComponent implements OnInit {
   DOUBLE: string = "00";
 
   operationSign = "÷,×,-,+"
+
   multiplicationDivision = "÷×";
   additionSubstraction = "+-";
   numbers: string = "0123456789";
+
+  isDarkMode: boolean = false;
 
   regularButtons: string[][] = [
     ["1", "2", "3"],
@@ -40,7 +42,27 @@ export class CalculatorAppComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let ball = document.getElementById("ball") as HTMLElement;
+    ball?.style.setProperty("left", "0");
+  }
 
+  toggleClicked() {
+    let ball = document.getElementById("ball") as HTMLElement;
+
+    if (this.isDarkMode) {
+      ball?.style.removeProperty("right");
+      ball?.style.setProperty("left", "0");
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+    else {
+      ball?.style.removeProperty("left");
+      ball?.style.setProperty("right", "0");
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    this.isDarkMode = !this.isDarkMode;
+
+    console.log("toggle clicked")
   }
 
   click(button: string) {
