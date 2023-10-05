@@ -76,6 +76,9 @@ export class CalculatorAppComponent implements OnInit {
       case "%":
         this.percent();
         break;
+      case "+/-":
+        this.toggleSign();
+        break;
       case ",":
         if (this.result == this.ZERO)
           this.result = `${this.ZERO}.`
@@ -90,7 +93,7 @@ export class CalculatorAppComponent implements OnInit {
 
   }
 
-
+ 
 
   operation(button: string) {
     if (this.value.active && this.operationSign.includes(button)) {
@@ -221,6 +224,35 @@ export class CalculatorAppComponent implements OnInit {
     array[array.length] = resultValue.substring(endValue + 1, resultValue.length)
     return array;
   }
+
+  toggleSign() {
+    if (this.value.active) {
+      this.result = String(Number(this.value.value) * -1)
+      this.value.active = false;
+      return;
+    }
+
+    let value: null | number = null;
+    let number = 0;
+    if (this.operationSign.includes(this.result[this.result.length - 1])) {
+      return;
+    }
+    for (let i = this.result.length - 1; i > 0; i--) {
+      if (this.operationSign.includes(this.result[i])) {
+        value = i;
+        break;
+      }
+    }
+    if (value != null) {
+      number = Number(this.result.substring(value + 1, this.result.length))
+      this.result = this.result.substring(0, value + 1) + String(number / 100)
+    } else {
+      number = Number(this.result)
+      this.result = String(number / 100);
+    }
+  }
+  
+  
 
   process(firstNumber: string, operation: string, secondNumber: string): number {
     switch (operation) {
