@@ -1,9 +1,30 @@
+<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
 <div class="container">
+
+    <div class="image-button">
+        <img src="../../assets/history.png" alt="" class="history-image">
+    </div>
+
     <div class="result">
         <span class="result-text">{{ result }}</span>
-        <span class="value"></span>
+        <span class="value" *ngIf="value.active">{{ value.value }}</span>
     </div>
-    <div class="buttons" *ngFor="let buttonRow of buttons">
-        <button class="button" *ngFor="let button of buttonRow">{{ button }}</button>
+
+    <div class="buttons">
+        <div class="col-75">
+            <div class="row row-button">
+                <div class="button" (click)="click(button)" *ngFor="let button of this.horizontalButtons">{{ button }}</div>
+            </div>
+            <div class="row" *ngFor="let row of this.regularButtons">
+                <div class="button regular-button"  (click)="click(button)" *ngFor="let button of row">{{ button }}</div>
+            </div>
+        </div>
+        <div class="col-25">
+            <div class="col-button">
+                <div class="row-25 button"  (click)="click(button)" *ngFor="let button of verticalButtons">{{ button }}</div>
+            </div>
+        </div>
     </div>
+    
 </div>
