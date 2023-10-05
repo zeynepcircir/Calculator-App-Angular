@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class CalculatorAppComponent implements OnInit {
 
+  operationHistory: string[] = [];
   result: string = "0";
   value: { active: boolean, value: string } = { active: true, value: "0" };
 
@@ -45,6 +46,7 @@ export class CalculatorAppComponent implements OnInit {
     let ball = document.getElementById("ball") as HTMLElement;
     ball?.style.setProperty("left", "0");
   }
+
 
   toggleClicked() {
     let ball = document.getElementById("ball") as HTMLElement;
@@ -119,14 +121,11 @@ export class CalculatorAppComponent implements OnInit {
     }
   }
 
-
-
   equalsButton() {
     if (this.result == this.ZERO) return;
     this.value.active = true
     this.value.value = this.calculate(this.result);
   }
-
 
 
   ac() {
@@ -252,9 +251,12 @@ export class CalculatorAppComponent implements OnInit {
     }
   }
   
+  showHistory() {
+    window.alert(this.operationHistory.slice(-3).join("\n"));
+  }
   
-
   process(firstNumber: string, operation: string, secondNumber: string): number {
+    this.operationHistory.push(`${firstNumber} ${operation} ${secondNumber}`);
     switch (operation) {
       case "×":
         return Number(firstNumber) * Number(secondNumber);

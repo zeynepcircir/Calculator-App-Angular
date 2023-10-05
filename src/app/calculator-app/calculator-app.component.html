@@ -11,19 +11,21 @@
                 <span id="ball" (click)="this.toggleClicked()"></span>
             </label>
         </div>
-    
-        <button class="history-image" mat-icon-button aria-label="iconButton">
+
+        <button type="button" class="history-image" mat-icon-button aria-label="iconButton"
+            (click)="this.showHistory()">
             <mat-icon>history</mat-icon>
         </button>
-    </div>
-    
 
-    <div  class="equal-button" >
-        <div class="equal-image">
-        <button mat-icon-button aria-label="iconButton">
-            <mat-icon> drag_handle </mat-icon>
-        </button>
     </div>
+
+
+    <div class="equal-button">
+        <div class="equal-image">
+            <button mat-icon-button aria-label="iconButton">
+                <mat-icon> drag_handle </mat-icon>
+            </button>
+        </div>
     </div>
 
     <div class="result">
@@ -34,17 +36,19 @@
     <div class="buttons">
         <div class="col-75">
             <div class="row row-button">
-                <div class="button" (click)="click(button)" *ngFor="let button of this.horizontalButtons">{{ button }}</div>
+                <div class="button" (click)="click(button)" *ngFor="let button of this.horizontalButtons">{{ button }}
+                </div>
             </div>
             <div class="row" *ngFor="let row of this.regularButtons">
-                <div class="button regular-button"  (click)="click(button)" *ngFor="let button of row">{{ button }}</div>
+                <div class="button regular-button" (click)="click(button)" *ngFor="let button of row">{{ button }}</div>
             </div>
         </div>
         <div class="col-25">
             <div class="col-button">
-                <div class="row-25 button"  (click)="click(button)" *ngFor="let button of verticalButtons">{{ button }}</div>
+                <div class="row-25 button" (click)="click(button)" *ngFor="let button of verticalButtons">{{ button }}
+                </div>
             </div>
         </div>
     </div>
-    
+
 </div>

@@ -10,7 +10,7 @@
 
 .result {
   background: var(--bg-color);
-  height: 200px;
+  height: 180px;
   font-size: 30px;
   display: flex;
   align-items: flex-end;
@@ -22,11 +22,11 @@
 .result-text {
   margin-right: 22px;
   font-size: 22px;
-  margin-top: 120px;
+  margin-top: 82px;
 }
 
 .value {
-  margin-right: 21px;
+  margin-right: 22px;
   font-size: 40px;
 }
 
@@ -114,7 +114,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  right: 21px;
+  right: 22px;
   z-index: 100;
 }
 
@@ -180,3 +180,4 @@
   bottom: 385px;
   left: 25px;
 }
+
