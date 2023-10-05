@@ -123,4 +123,95 @@ export class CalculatorAppComponent implements OnInit {
     return "";
   }
 
- 
+  percent() {
+    if (this.value.active) {
+      this.result = String(Number(this.value.value) / 100)
+      this.value.active = false;
+      return;
+    }
+
+    let value: null | number = null;
+    let number = 0;
+    if (this.operationSign.includes(this.result[this.result.length - 1])) {
+      return;
+    }
+    for (let i = this.result.length - 1; i > 0; i--) {
+      if (this.operationSign.includes(this.result[i])) {
+        value = i;
+        break;
+      }
+    }
+    if (value != null) {
+      number = Number(this.result.substring(value + 1, this.result.length))
+      this.result = this.result.substring(0, value + 1) + String(number / 100)
+    } else {
+      number = Number(this.result)
+      this.result = String(number / 100);
+    }
+  }
+
+  calculate(resultValue: string) {
+    var calculated = false;
+    let value = 0;
+    let contain = false;
+
+    for (let i = 0; i < resultValue.length; i++) {
+      if (this.operationSign.includes(resultValue[i])) {
+        contain = true;
+        break;
+      }
+    }
+    if (!contain) {
+      return resultValue;
+    }
+    let array = this.operationSignFind(resultValue);
+    while (!calculated) {
+      console.log(array)
+      if (this.multiplicationDivision.includes(array[1])) {
+        value = this.process(array[0], array[1], array[2])
+        array.splice(0, 3, String(value));
+      } else {
+        if (this.multiplicationDivision.includes(array[3])) {
+          value = this.process(array[2], array[3], array[4])
+          array.splice(2, 3, String(value));
+        } else {
+          value = this.process(array[0], array[1], array[2])
+          array.splice(0, 3, String(value));
+        }
+      }
+      if (!this.operationSign.includes(array[1])) {
+        calculated = true;
+      }
+    }
+    return array[0];
+  }
+
+  operationSignFind(resultValue: string) {
+    let array: string[] = [];
+    let endValue = 0;
+    for (let i = 1; i < resultValue.length; i++) {
+      if (this.operationSign.includes(resultValue[i])) {
+        array[array.length] = (resultValue.substring(endValue == 0 ? endValue : endValue + 1, i))
+        endValue = i;
+        array[array.length] = (resultValue[i])
+      }
+    }
+    array[array.length] = resultValue.substring(endValue + 1, resultValue.length)
+    return array;
+  }
+
+  process(firstNumber: string, operation: string, secondNumber: string): number {
+    switch (operation) {
+      case "×":
+        return Number(firstNumber) * Number(secondNumber);
+      case "÷":
+        return Number(firstNumber) / Number(secondNumber);
+      case "+":
+        return Number(firstNumber) + Number(secondNumber);
+      case "-":
+        return Number(firstNumber) - Number(secondNumber);
+      default:
+        return 0;
+    }
+  }
+}
