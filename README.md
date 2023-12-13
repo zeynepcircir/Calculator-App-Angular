@@ -1,3 +1,8 @@
+![c](https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/e7ad388b-d6c8-4415-91da-cd0abf19dad9)
+![a](https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/474cbab6-b6c1-4cd2-8f5a-a88bdb847d63)
+![l](https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/7a51e259-7dcf-424b-a326-3fadeeaccc4d)
+
+
 # CalculatorApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
