@@ -1,7 +1,7 @@
 
-| <img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/21500757-09f1-4a9c-9a99-fea3c172b0a2" alt="Image 3" width="220"> |
+ <img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/21500757-09f1-4a9c-9a99-fea3c172b0a2" alt="Image 3" width="220"> <br>
 
-| <img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/bb5b7f81-677b-4992-97b4-a4dedfca1ed5" alt="ımage2" width="220"> |
+ <img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/bb5b7f81-677b-4992-97b4-a4dedfca1ed5" alt="ımage2" width="220"> 
     
 # CalculatorApp
 
