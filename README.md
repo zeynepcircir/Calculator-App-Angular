@@ -1,8 +1,8 @@
 
-<img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/fd399923-a548-480f-8e9e-f56a74c78265" alt="Image 3" width="220">
+| <img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/21500757-09f1-4a9c-9a99-fea3c172b0a2" alt="Image 3" width="220"> |
 
-<img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/830eee33-0aa5-4c7b-9c54-5bab292bb12d" alt="Image 4" width="220">
-
+| <img src="https://github.com/zeynepcircir/Calculator-App-Angular/assets/81877446/bb5b7f81-677b-4992-97b4-a4dedfca1ed5" alt="ımage2" width="220"> |
+    
 # CalculatorApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
